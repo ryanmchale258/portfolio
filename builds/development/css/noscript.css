@@ -1,0 +1,40 @@
+#hero #ryan,
+#hero #mchale,
+#work {
+	display: none;
+}
+
+#ns_tagline,
+#ns_work {
+	display: block;
+}
+
+#ns_tagline {
+	font-size: 1rem !important;
+}
+
+#ns_work .ns_iconholder {
+	text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+	#ns_tagline {
+		font-size: 1.5rem !important;
+	}
+
+	#ns_work img {
+		width: 60%;
+	}
+
+}
+
+@media screen and (min-width: 640px) {
+	#ns_work img {
+		width: 50%;
+		display: inline;
+	}
+
+	#ns_work .ns_iconholder {
+		text-align: right;
+	}
+}
