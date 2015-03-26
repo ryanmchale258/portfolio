@@ -11,8 +11,7 @@ class Contact extends CI_Controller {
 	public function index()	{
 			$data['pgTitle'] = "Home";
 			$data['metaD'] = "Meta description missing.";
-			$data['bodyclass'] = "nohero";
-			$data['specialScripts'] = "js/main.js";
+			$data['bodyclass'] = "contact";
 			$data['formstart'] = form_open('send/form', array('id' => 'theform', 'class' => 'row'));
 					$data['name'] = form_input(array(
 											'name' => 'name',
