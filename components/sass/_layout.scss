@@ -6,9 +6,6 @@
 		@include container;
 		.innercontent {
 			h2 {
-				font-family: $chunk;
-				@include text-shadow(1px 1px $lightblue);
-				color: $red;
 				font-size: 1.875rem;
 				line-height: 180%;
 				@include breakpoint($medium){

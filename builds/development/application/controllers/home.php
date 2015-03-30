@@ -7,6 +7,7 @@ class Home extends CI_Controller {
 	    $this->load->helper('form');
 	    $this->load->helper('captcha');
 	    $this->load->model('projects_model');
+	    //$this->load->model('blogs_model');
 	}
 
 	public function index()	{
@@ -14,6 +15,34 @@ class Home extends CI_Controller {
 		$data['metaD'] = "Meta description missing.";
 		$data['bodyclass'] = "home";
 		$data['initialize'] = 'homeScript';
+		$data['projects'] = $this->projects_model->getAll();
+		//$data['blogs'] = $this->blogs_model->getThree();
+		$data['formstart'] = form_open('send/form', array('id' => 'theform', 'class' => 'row'));
+		$data['name'] = form_input(array(
+								'name' => 'name',
+								'type' => 'text',
+								'placeholder' => 'Your Name'
+		));
+		$data['email'] = form_input(array(
+								'name' => 'email',
+								'type' => 'text',
+								'placeholder' => 'Your Email'
+		));
+		$data['company'] = form_input(array(
+								'name' => 'company',
+								'type' => 'text',
+								'placeholder' => 'Your Company'
+		));
+		$data['interest'] = form_input(array(
+								'name' => 'interest',
+								'type' => 'text',
+								'placeholder' => 'Area of Interest'
+		));
+		$data['description'] = form_textarea(array(
+								'name' => 'description',
+								'type' => 'text',
+								'placeholder' => 'Description'
+		));
 		
 		$this->load->view('template/head', $data);
 		$this->load->view('template/mobilenav');
@@ -23,6 +52,8 @@ class Home extends CI_Controller {
 
 		$this->load->view('home/bio');
 		$this->load->view('home/work');
+		//$this->load->view('home/blog');
+		$this->load->view('home/contact');
 		$this->load->view('template/close');
 	}
 

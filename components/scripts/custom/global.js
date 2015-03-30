@@ -5,6 +5,7 @@ $(function(){
     var mobileNav = document.querySelector("#mobnav"),
         navList = mobileNav.querySelector("ul"),
         navFire = document.querySelector("#navbutton"),
+        mobItems = document.querySelectorAll('#mobnav a'),
         navBtnImg = navFire.querySelector("img"),
         navbar = document.querySelector("#topnav");
 
@@ -15,8 +16,11 @@ $(function(){
             navBtnImg.classList.toggle("imgShift");
         }
 
-        navFire.addEventListener("click", dropNav, false);
+        for(i = 0 ; i < mobItems.length ; i++){
+            mobItems[i].addEventListener("click", dropNav, false);
+        }
 
+        navFire.addEventListener("click", dropNav, false);   
 
 
     var controller = new ScrollMagic.Controller({

@@ -1,5 +1,5 @@
 .work {
-	background: $darkgrey;
+	background: $red;
 	color: $light;
 	.innercontent {
 		@include layout('right');
@@ -7,35 +7,94 @@
 		@include breakpoint($medium){
 			border-left: 1px solid $light;
 		}
+		h2 {
+			font-family: $display;
+			font-size: 3rem;
+			color: $light;
+			margin-bottom: 40px;
+			@include breakpoint($medium){
+				margin-left: -74px;
+			}
+		}
+		.projgrid{
+			@include container(390px);
+			.block-grid {
+				display: block;
+				@include gallery(6 of 12);
+				text-align: center;
+				img{
+					width: auto;
+				}
+				&:last-child {
+					// @include span(6);
+					// @include pre(3);
+				}
+			}
+			@include breakpoint($small){
+				@include container(550px);
+				.block-grid {
+					@include gallery(4 of 12);
+				}
+			}
+			@include breakpoint($medium){
+				@include container();
+				.block-grid {
+					@include gallery(3 of 12);
+				}
+			}
+		}
 	}
 }
 
 .portfolio {
 	#hero {
 		background: $darkgrey;
-		height: 685px;
 		padding-top: 50px;
 		@include box-shadow(0 -30px 50px darken($darkgrey, 10) inset);
 		text-align: center;
-		h1 {
-			font-family: $chunk;
-			color: $light;
-			font-size: 3rem;
-		}
-		p {
-			color: $light;
-			font-family: $paragraph;
-			line-height: 180%;
-			margin-top: 10px;
-			margin-bottom: 20px;
-		}
-		img {
-			width: auto;
+		.constrain{
+			@include breakpoint(0 $medium){
+				@include container(90%);
+			}
+			h1 {
+				font-family: $chunk;
+				color: $light;
+				font-size: 3rem;
+			}
+			p {
+				color: $light;
+				font-family: $paragraph;
+				line-height: 180%;
+				margin-top: 10px;
+				margin-bottom: 20px;
+			}
+			.projectshot-mob {
+				@include breakpoint($medium){
+					height: 500px;
+					img {
+						display: none;
+					}
+				}
+			}
 		}
 	}
 	.projecttable {
 		background: $red;
 		border-top: 6px solid darken($red, 15);
 		height: 50px;
+		position: relative;
+		.projectshot-dsk {
+			position: absolute;
+			bottom: -45px;
+			width: 100%;
+			text-align: center;
+			display: none;
+			@include breakpoint($medium){
+				display: block;
+			}
+			img {
+				width: auto;
+			}
+		}
 	}
 }

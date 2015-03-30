@@ -1,0 +1,47 @@
+.blog {
+	background: $darkgrey;
+	color: $light;
+	.innercontent {
+		@include layout('left');
+		border-top: 1px solid $red;
+		@include breakpoint($medium){
+			border-left: 1px solid $red;
+		}
+		.preview {
+			padding-bottom: 20px;
+			border-top: 1px dotted $light;
+			padding-top: 20px;
+			&:first-child {
+				padding-top: 0;
+				border-top: none;
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+			h3 {
+				font-family: $display;
+				font-size: 2.5rem;
+			}
+			.sample {
+				margin-bottom: 10px;
+			}
+			p.date {
+				font-size: .875rem;
+			}
+			.readmore {
+				font-family: $display;
+				display: block;
+				background: $red;
+				color: $light;
+				padding: 10px 20px;
+				text-align: center;
+			}
+			@include breakpoint($medium){
+				@include span(4);
+				padding-top: 0;
+				padding-bottom: 0;
+				border: none;
+			}
+		}
+	}
+}

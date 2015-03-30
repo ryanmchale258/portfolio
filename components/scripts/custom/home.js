@@ -7,7 +7,8 @@ homeScript = function(){
     	nextP = nextTag.querySelector("p");
     	theHeight = juggleTag.offsetHeight,
     	tags = ["Designer", "Developer", "Coffee Receptacle"],
-    	count = 0;
+    	count = 0,
+        topoffset = 0;
 
     currentP.innerHTML = tags[0];
     nextP.innerHTML = tags[1];
@@ -57,6 +58,53 @@ homeScript = function(){
             }, 500);
 
     }, 1500);
+
+    function resizeChanges(){
+            var mq = window.matchMedia( "(min-width: 960px)" );
+
+            if (mq.matches) {
+                topoffset = 46;
+            }
+        }
+
+        resizeChanges();
+
+        $(window).resize(function(){
+            resizeChanges();
+        });
+
+        $(window).scroll(function(){
+            var windowpos = $(window).scrollTop() + topoffset;
+            $('#topnav li a').removeClass('active');
+
+            if (windowpos > $('#bio').offset().top){
+                $('#topnav li a').removeClass('active');
+                $('a[href$="#bio"]').addClass('active');
+            }
+
+            if (windowpos > $('#work').offset().top){
+                $('#topnav li a').removeClass('active');
+                $('a[href$="#work"]').addClass('active');
+            }
+
+            if (windowpos > $('#contact').offset().top){
+                $('#topnav li a').removeClass('active');
+                $('a[href$="#contact"]').addClass('active');
+            }
+        }); 
+
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top - topoffset
+            }, 500);
+            return false;
+          }
+        }
+      });
 
 
 };

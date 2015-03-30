@@ -1,4 +1,4 @@
-<div class="bio layout">
+<div id="bio" class="bio layout">
 	<section class="innerwrap">
 		<article class="innercontent">
 			<h2>Hi, my name is Ryan... <span>and I like to build things.</span></h2>

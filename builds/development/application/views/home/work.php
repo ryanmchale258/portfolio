@@ -1,8 +1,12 @@
-<div class="work layout">
+<div id="work" class="work layout">
 	<section class="innerwrap">
 		<div class="innercontent">
-			<h2>Hi, my name is Ryan... <span>and I like to build things.</span></h2>
-			<p>Fortunately for me, the web is a great place to do that. Web technologies are driving innovation and creativity in more ways than ever, and I want to be at the forefront of that. I love the kind of problem solving that is required in this industry, and I pride myself on coming up with creative solutions. I love to make great, stylish, and functional products that will become a part of people's daily lives.</p>
+			<h2>Projects</h2>
+			<div class="projgrid">
+				<?php foreach($projects as $row): ?>
+					<a class="block-grid" href="<?php echo base_url() . index_page(); ?>work/<?php echo $row->projects_shortname; ?>"><img src="<?php echo base_url(); ?>images/portfolio/icon-<?php echo $row->projects_shortname; ?>.png" alt="<?php echo $row->projects_title; ?>"></a>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</section>
 </div>
