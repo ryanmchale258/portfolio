@@ -1,4 +1,4 @@
-globalScript = function(){
+$(function(){
 
     base_url = "http://www.ryanmchale.ca/";
 
@@ -8,10 +8,6 @@ globalScript = function(){
         navBtnImg = navFire.querySelector("img"),
         navbar = document.querySelector("#topnav");
 
-        // if(document.documentElement.clientWidth <= 500) {
-        //     dumbskrollr.style.height = (curH + 156) + "px";
-        // }
-
         function dropNav() {
             mobileNav.classList.toggle("navdown");
             navList.classList.toggle("shadowed");
@@ -19,18 +15,22 @@ globalScript = function(){
             navBtnImg.classList.toggle("imgShift");
         }
 
-        $(document).scroll(function() {
-            if($(document).scrollTop() >= 50){
-                $("#topnav").addClass("scrolledshadow");
-                $("#navbutton").addClass("scrolledshadow");
-            }else{
-                $("#topnav").removeClass("scrolledshadow");
-                $("#navbutton").removeClass("scrolledshadow");
-            }
-            console.log($(document).scrollTop());
-        });
-
         navFire.addEventListener("click", dropNav, false);
 
 
-}();
+
+    var controller = new ScrollMagic.Controller({
+        globalSceneOptions : {
+            triggerHook : "onLeave"
+        }
+    });
+
+    var pin = new ScrollMagic.Scene({
+        triggerElement : "#topnav"
+    }).setPin("#topnav", {pushFollowers: false});
+
+    pin.setClassToggle("#topnav", "stuck");
+
+    controller.addScene(pin);
+
+});

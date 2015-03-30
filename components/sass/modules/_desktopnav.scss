@@ -1,0 +1,89 @@
+.scrollmagic-pin-spacer {
+	@include breakpoint(0 $medium){
+		display: none !important;
+	}
+	#topnav {
+		background: $lightblue;
+		border-top: 6px solid darken($red, 15);
+		padding-top: .25rem;
+		padding-bottom: .25rem;
+		@include single-transition(all, .5s, ease-in-out);
+		display: none;
+		@include breakpoint($medium){
+			display: block;
+		}
+		.innernav {
+			@include container(40em);
+			@include clearfix;
+			ul {
+				li {
+					width: 25%;
+					float: left;
+					text-align: center;
+					@include single-transition(all, .5s, ease-in-out);
+					a {
+						font-size: 1.2rem;
+						line-height: 2.5rem;
+						display: block;
+						width: 100%;
+						font-family: $display;
+						text-transform: uppercase;
+						color: darken($red, 15);
+						border-right: 1px dotted darken($red, 10);
+						@include single-transition(all, .5s, ease-in-out);
+					}
+					&:last-child a {
+						border-right: none;
+					}
+					&.scrLogo {
+						width: 0;
+						height: 0;
+						opacity: 0;
+						a {
+							background: transparent;
+						}
+					}
+				}
+			}
+		}
+		&.stuck {
+			@include box-shadow(0 3px 2px rgba(#000, .7));
+			border-top: 6px solid $red;
+			top: 0 !important;
+			.innernav{
+				ul {
+					li {
+						width: 20%;
+						a {
+							font-size: .675rem;
+						}
+						&.scrLogo {
+							position: relative;
+							height: 20px;
+							opacity: 1;
+							a {
+								display: block;
+								background: $red;
+								padding: 25px 30px 10px 30px;
+								position: absolute;
+								top: -25px;
+								left: 0;
+								@include border-bottom-left-radius(70px);
+								@include border-bottom-right-radius(70px);
+								@include box-shadow(0 3px 2px rgba(#000, .7));
+								img {
+									margin-left: 12px;
+								}
+							}
+						}
+						&.pre {
+							a{
+								border-right: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

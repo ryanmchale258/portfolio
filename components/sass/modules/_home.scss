@@ -1,0 +1,50 @@
+.home{
+	#hero {
+		background-color: $red;
+		text-align: center;
+		position: relative;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		@include box-shadow(0 -30px 50px darken($red, 10) inset);
+		@include breakpoint($medium){
+			background-image: url('../images/bg-herotile.png');
+			@include animation(scrollbg 60s infinite linear);
+		}
+		#logoarea {
+			//@include background-image(radial-gradient(center center, $red, transparent));
+			background: $red;
+			max-width: 400px;
+			width: 80%;
+			@include breakpoint($medium){
+				padding: 20px 50px;
+				@include border-radius(100px);
+				width: auto;
+				@include box-shadow(20px 20px 20px $red,
+										-20px -20px 20px $red,
+											-20px 20px 20px $red,
+												20px -20px 20px $red);
+			}
+			#juggleBox {
+				height: 50px;
+				overflow: hidden;
+				position: relative;
+					.tag {
+					margin: 0;
+					padding: 0;
+					position: absolute;
+					width: 100%;
+					text-align: center;
+					@include single-transition(top, 0.5s);
+					p {
+						font-size: 1.5rem;
+						line-height: 50px;
+						margin: 0;
+						padding: 0;
+						color: $light;
+						font-family: $thinit;
+					}
+				}
+			}
+		}
+	}
+}

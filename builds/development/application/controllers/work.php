@@ -22,16 +22,18 @@ class Work extends CI_Controller {
 	}
 
 	public function portfolio($slug)	{
-		$data['pgTitle'] = "Home";
+		$data['pgTitle'] = $slug;
 		$data['metaD'] = "Meta description missing.";
 		$data['bodyclass'] = 'portfolio';
 		$data['record'] = $this->projects_model->getProject($slug);
 		
 		$this->load->view('template/head', $data);
 		$this->load->view('template/mobilenav');
+		
 		$this->load->view('template/desktopnav');
-		$this->load->view('more_hero');
-		$this->load->view('project');
+		$this->load->view('work/hero');
+		$this->load->view('work/content');
+
 		$this->load->view('template/close');
 	}
 

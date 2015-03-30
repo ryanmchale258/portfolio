@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,9 +10,6 @@
 		<link rel="icon" href="<?php echo base_url(); ?>favicon.ico" type="image/x-icon">
 
 		<link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet" type="text/css" />
-		<noscript>
-			<link href="<?php echo base_url(); ?>css/noscript.css" rel="stylesheet" type="text/css" />
-		</noscript>
 	</head>
 
 <body class="<?php if(isset($bodyclass)){ echo $bodyclass; } ?>">

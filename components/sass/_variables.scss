@@ -1,4 +1,32 @@
 // _variables.scss
 // ================= 
 
-//@include border-box-sizing; //better border box sizing for layout
+@include border-box-sizing; //better border box sizing for layout
+
+// Grid Setup
+$susy: (
+	columns         : 12,
+	container       : 60em,
+	gutters         : .25,
+	gutter-position : split
+);
+
+// Breakpoints
+$narrow   : 400px;
+$small    : 650px;
+$medium   : 960px;
+$large    : 1140px;
+$wide     : 1200px;
+
+// Fonts
+$paragraph   : 'sinkin_sans300_light', Helvetica, Arial, sans-serif;
+$display     : 'sinkin_sans800_black', Helvetica, Arial, sans-serif;
+$thinit      : 'sinkin_sans100_thin_italic', Helvetica, Arial, sans-serif;
+$chunk      : 'chunkfiveroman', serif;
+$fontawesome : FontAwesome;
+
+// Palette
+$red       : #e04028;
+$light     : #fff;
+$lightblue : #F7F4FB;
+$darkgrey  : #333;

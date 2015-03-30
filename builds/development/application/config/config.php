@@ -15,6 +15,7 @@
 |
 */
 $config['base_url']	= 'http://localhost/portfolio/builds/development/';
+//$config['base_url']	= 'http://www.ryanmchale.ca/newsite/';
 
 /*
 |--------------------------------------------------------------------------

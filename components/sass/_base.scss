@@ -1,2 +1,15 @@
 // _base.scss
 // ================= 
+
+a {
+	text-decoration: none;
+}
+
+img {
+	width: 100%;
+	max-width: 100%;
+}
+
+.constrain {
+	@include container;
+}

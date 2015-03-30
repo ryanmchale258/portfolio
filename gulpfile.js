@@ -19,18 +19,16 @@ if(env === 'production') {
 	outputDir = 'builds/development/';
 }
 
-jsSources = ['components/scripts/*.js',
-					'components/scripts/custom/*.js'];
+jsSources = ['components/scripts/jqloader.js', 
+				'components/scripts/TweenMax.min.js', 
+					'components/scripts/ScrollMagic.min.js', 
+						'components/scripts/custom/*.js'];
 sassSources = ['components/sass/style.scss'];
 markupSources = ['builds/development/application/controllers/**',
 					'builds/development/application/models/**',
 						'builds/development/application/views/**',
 							'builds/development/index.php'];
 
-gulp.task('markup', function(){
-	gulp.src(markupSources)
-	.pipe(livereload());
-});
 
 gulp.task('js', function(){
 	gulp.src(jsSources)
@@ -55,9 +53,8 @@ gulp.task('compass', function(){
 
 gulp.task('watch', function(){
 	livereload.listen();
-	gulp.watch(markupSources, ['markup']);
 	gulp.watch(jsSources, ['js']);
 	gulp.watch(['components/sass/*.scss', 'components/sass/modules/*.scss'], ['compass']);
 })
 
-gulp.task('default', ['markup', 'js', 'compass', 'watch']);
+gulp.task('default', ['js', 'compass', 'watch']);

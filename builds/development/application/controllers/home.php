@@ -17,8 +17,12 @@ class Home extends CI_Controller {
 		
 		$this->load->view('template/head', $data);
 		$this->load->view('template/mobilenav');
-		$this->load->view('template/desktopnav');
+		
 		$this->load->view('home_hero');
+		$this->load->view('template/desktopnav');
+
+		$this->load->view('home/bio');
+		$this->load->view('home/work');
 		$this->load->view('template/close');
 	}
 

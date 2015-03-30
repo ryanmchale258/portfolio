@@ -19,3 +19,49 @@
 		clear: both;
 	}//after
 }//clearfix
+
+@mixin panel($clr) {
+	background-color: $clr;
+	@include breakpoint($medium){
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+}
+
+@include keyframes(scrollbg){
+	0% {
+    	background-position: 0px 0px;
+    } 100% {
+    	background-position: 0px 592px;
+    }
+}
+
+@mixin layout($orientation){
+	padding-top: 30px;
+	margin-top: 30px;
+	padding-bottom: 40px;
+
+	@if $orientation == 'left'{
+		@include span(11);
+		@include pre(1);
+		padding-right: 20px;
+		@include breakpoint($medium){
+			border-top: none;
+			margin-top: 0;
+			padding-left: 70px;
+		}
+	}
+
+	@if $orientation == 'right'{
+		@include span(11);
+		@include post(1);
+		padding-left: 20px;
+		@include breakpoint($medium){
+			border-top: none;
+			margin-top: 0;
+			padding-left: 70px;
+			@include pre(1);
+			@include post(0);
+		}
+	}
+}

@@ -4,6 +4,9 @@
 // Font List
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
+// Legacy imports
+@import "css/fonts";
+
 // Compass imports
 @import "compass";
 @import "compass/reset";
@@ -12,6 +15,8 @@
 @import "compass/CSS3/border-radius";
 @import "compass/CSS3/transition";
 @import "compass/CSS3/transform";
+@import "compass/CSS3/animation";
+
 
 // External Libraries
 @import "breakpoint";
@@ -23,6 +28,9 @@
 @import "base";
 @import "layout";
 
-// Legacy imports
-@import "css/fonts";
-@import "css/style";
+// Modules
+@import "modules/home";
+@import "modules/mobnav";
+@import "modules/desktopnav";
+@import "modules/bio";
+@import "modules/work";
